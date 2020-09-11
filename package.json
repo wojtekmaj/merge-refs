@@ -8,8 +8,8 @@
   "sideEffects": false,
   "scripts": {
     "build": "yarn build-esm && yarn build-umd",
-    "build-esm": "cross-env BABEL_ENV=production-esm babel src -d dist/esm --ignore **/*.spec.js",
-    "build-umd": "cross-env BABEL_ENV=production-umd babel src -d dist/umd --ignore **/*.spec.js",
+    "build-esm": "cross-env BABEL_ENV=production-esm babel src -d dist/esm --ignore \"**/*.spec.js\"",
+    "build-umd": "cross-env BABEL_ENV=production-umd babel src -d dist/umd --ignore \"**/*.spec.js\"",
     "clean": "rimraf dist",
     "jest": "jest",
     "jest-coverage": "jest --coverage",
