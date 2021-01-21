@@ -6,7 +6,7 @@ A function that merges React refs into one. Filters out invalid (eg. falsy) refs
 ## tl;dr
 * Install by executing `npm install merge-refs` or `yarn add merge-refs`.
 * Import by adding `import mergeRefs from 'merge-refs'`.
-* Pass arguments to it. Forget.
+* Use it in `ref` like so: `<div ref={mergeRefs(ref, someOtherRef)} />`
 
 ## Accepted refs
 * Refs created using `React.createRef()`
