@@ -12,7 +12,6 @@
     "build-umd": "BABEL_ENV=production-umd babel src -d dist/umd --ignore \"**/*.spec.js\"",
     "clean": "rimraf dist",
     "jest": "jest",
-    "jest-coverage": "jest --coverage",
     "lint": "eslint src/ --ext .jsx,.js",
     "prepack": "yarn clean && yarn build",
     "test": "yarn lint && yarn jest"
