@@ -1,17 +1,20 @@
 [![npm](https://img.shields.io/npm/v/merge-refs.svg)](https://www.npmjs.com/package/merge-refs) ![downloads](https://img.shields.io/npm/dt/merge-refs.svg) [![CI](https://github.com/wojtekmaj/merge-refs/workflows/CI/badge.svg)](https://github.com/wojtekmaj/merge-refs/actions) [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 
 # Merge-Refs
+
 A function that merges React refs into one. Filters out invalid (eg. falsy) refs as well and returns original ref if only one valid ref was given.
 
 ## tl;dr
-* Install by executing `npm install merge-refs` or `yarn add merge-refs`.
-* Import by adding `import mergeRefs from 'merge-refs'`.
-* Use it in `ref` like so: `<div ref={mergeRefs(ref, someOtherRef)} />`
+
+- Install by executing `npm install merge-refs` or `yarn add merge-refs`.
+- Import by adding `import mergeRefs from 'merge-refs'`.
+- Use it in `ref` like so: `<div ref={mergeRefs(ref, someOtherRef)} />`
 
 ## Accepted refs
-* Refs created using `React.createRef()`
-* Refs created using `React.useRef()`
-* Functional refs
+
+- Refs created using `React.createRef()`
+- Refs created using `React.useRef()`
+- Functional refs
 
 ## Example
 
@@ -22,9 +25,7 @@ function Hello() {
     // I'm going to be called!
   };
 
-  return (
-    <div ref={mergeRefs(ref1, ref2)} />
-  );
+  return <div ref={mergeRefs(ref1, ref2)} />;
 }
 ```
 
