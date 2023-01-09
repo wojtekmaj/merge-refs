@@ -34,7 +34,7 @@ describe('mergeRefs()', () => {
 
   it('returns merged refs properly', () => {
     const ref1 = jest.fn();
-    const ref2 = createRef();
+    const ref2 = createRef<HTMLDivElement>();
 
     const result = mergeRefs(ref1, ref2);
 
@@ -44,7 +44,7 @@ describe('mergeRefs()', () => {
 
   it('handles merged functional refs properly', () => {
     const ref1 = jest.fn();
-    const ref2 = createRef();
+    const ref2 = createRef<HTMLDivElement>();
 
     const mergedRef = mergeRefs(ref1, ref2);
 
@@ -55,7 +55,7 @@ describe('mergeRefs()', () => {
   });
 
   it('handles merged object refs properly', () => {
-    const ref1 = createRef();
+    const ref1 = createRef<HTMLDivElement>();
     const ref2 = jest.fn();
 
     const mergedRef = mergeRefs(ref1, ref2);

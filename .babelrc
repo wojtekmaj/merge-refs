@@ -1,11 +1,8 @@
 {
-  "presets": ["@babel/env"],
+  "presets": ["@babel/typescript", "@babel/env"],
   "env": {
-    "production-esm": {
-      "presets": [["@babel/env", { "modules": false }]]
-    },
     "test": {
-      "presets": ["@babel/env", ["@babel/react", { "runtime": "automatic" }]]
+      "presets": ["@babel/typescript", "@babel/env", ["@babel/react", { "runtime": "automatic" }]]
     }
   }
 }

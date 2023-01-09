@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 /**
  * A function that merges React refs into one.
  * Supports both functions and ref objects created using createRef() and useRef().
@@ -10,19 +12,23 @@
  * @param {...Array<Function|object>} inputRefs Array of refs
  * @returns {Function} Merged refs
  */
-export default function mergeRefs(...inputRefs) {
+export default function mergeRefs<T>(
+  ...inputRefs: React.Ref<T>[]
+): React.Ref<T> | React.RefCallback<T> {
   const filteredInputRefs = inputRefs.filter(Boolean);
 
   if (filteredInputRefs.length <= 1) {
-    return filteredInputRefs[0];
+    const firstRef = filteredInputRefs[0];
+
+    return firstRef;
   }
 
   return function mergedRefs(ref) {
     filteredInputRefs.forEach((inputRef) => {
       if (typeof inputRef === 'function') {
         inputRef(ref);
-      } else {
-        inputRef.current = ref;
+      } else if (inputRef) {
+        (inputRef as React.MutableRefObject<T | null>).current = ref;
       }
     });
   };
