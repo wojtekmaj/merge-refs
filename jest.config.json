@@ -1,3 +1,4 @@
 {
-  "reporters": ["default", "github-actions"]
+  "reporters": ["default", "github-actions"],
+  "testEnvironment": "jsdom"
 }

@@ -1,3 +1,6 @@
+import { createRef } from 'react';
+import { render } from '@testing-library/react';
+
 import mergeRefs from './index';
 
 describe('mergeRefs()', () => {
@@ -14,7 +17,7 @@ describe('mergeRefs()', () => {
   });
 
   it('returns original ref given only one ref', () => {
-    const ref = () => {};
+    const ref = jest.fn();
 
     const result = mergeRefs(ref);
 
@@ -22,7 +25,7 @@ describe('mergeRefs()', () => {
   });
 
   it('returns original ref given one ref and one falsy argument', () => {
-    const ref = () => {};
+    const ref = jest.fn();
 
     const result = mergeRefs(ref, null);
 
@@ -30,8 +33,8 @@ describe('mergeRefs()', () => {
   });
 
   it('returns merged refs properly', () => {
-    const ref1 = () => {};
-    const ref2 = {};
+    const ref1 = jest.fn();
+    const ref2 = createRef();
 
     const result = mergeRefs(ref1, ref2);
 
@@ -41,26 +44,24 @@ describe('mergeRefs()', () => {
 
   it('handles merged functional refs properly', () => {
     const ref1 = jest.fn();
-    const ref2 = {};
+    const ref2 = createRef();
 
     const mergedRef = mergeRefs(ref1, ref2);
 
-    const refElement = {};
-    mergedRef(refElement);
+    const { container } = render(<div ref={mergedRef} />);
 
     expect(ref1).toHaveBeenCalledTimes(1);
-    expect(ref1).toHaveBeenCalledWith(refElement);
+    expect(ref1).toHaveBeenCalledWith(container.firstChild);
   });
 
   it('handles merged object refs properly', () => {
-    const ref1 = {};
+    const ref1 = createRef();
     const ref2 = jest.fn();
 
     const mergedRef = mergeRefs(ref1, ref2);
 
-    const refElement = {};
-    mergedRef(refElement);
+    const { container } = render(<div ref={mergedRef} />);
 
-    expect(ref1.current).toBe(refElement);
+    expect(ref1.current).toBe(container.firstChild);
   });
 });
