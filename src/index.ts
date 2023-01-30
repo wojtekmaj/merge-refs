@@ -1,4 +1,4 @@
-import * as React from 'react';
+import type * as React from 'react';
 
 /**
  * A function that merges React refs into one.
