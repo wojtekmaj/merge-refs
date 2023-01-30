@@ -7,13 +7,13 @@ describe('mergeRefs()', () => {
   it('returns falsy result given no arguments', () => {
     const result = mergeRefs();
 
-    expect(result).toBe(undefined);
+    expect(result).toBeFalsy();
   });
 
   it('returns falsy result given falsy arguments', () => {
     const result = mergeRefs(null, null);
 
-    expect(result).toBe(undefined);
+    expect(result).toBeFalsy();
   });
 
   it('returns original ref given only one ref', () => {

@@ -20,7 +20,7 @@ export default function mergeRefs<T>(
   if (filteredInputRefs.length <= 1) {
     const firstRef = filteredInputRefs[0];
 
-    return firstRef;
+    return firstRef || null;
   }
 
   return function mergedRefs(ref) {
