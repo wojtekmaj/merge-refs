@@ -51,7 +51,7 @@ describe('mergeRefs()', () => {
     const { container } = render(<div ref={mergedRef} />);
 
     expect(ref1).toHaveBeenCalledTimes(1);
-    expect(ref1).toHaveBeenCalledWith(container.firstChild);
+    expect(ref1).toHaveBeenCalledWith(container.firstElementChild);
   });
 
   it('handles merged object refs properly', () => {
@@ -62,6 +62,6 @@ describe('mergeRefs()', () => {
 
     const { container } = render(<div ref={mergedRef} />);
 
-    expect(ref1.current).toBe(container.firstChild);
+    expect(ref1.current).toBe(container.firstElementChild);
   });
 });
