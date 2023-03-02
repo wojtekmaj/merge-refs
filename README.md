@@ -1,4 +1,4 @@
-[![npm](https://img.shields.io/npm/v/merge-refs.svg)](https://www.npmjs.com/package/merge-refs) ![downloads](https://img.shields.io/npm/dt/merge-refs.svg) [![CI](https://github.com/wojtekmaj/merge-refs/workflows/CI/badge.svg)](https://github.com/wojtekmaj/merge-refs/actions) [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
+[![npm](https://img.shields.io/npm/v/merge-refs.svg)](https://www.npmjs.com/package/merge-refs) ![downloads](https://img.shields.io/npm/dt/merge-refs.svg) [![CI](https://github.com/wojtekmaj/merge-refs/workflows/CI/badge.svg)](https://github.com/wojtekmaj/merge-refs/actions)
 
 # Merge-Refs
 

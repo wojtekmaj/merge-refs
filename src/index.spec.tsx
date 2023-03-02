@@ -1,3 +1,4 @@
+import { describe, expect, it, vi } from 'vitest';
 import { createRef } from 'react';
 import { render } from '@testing-library/react';
 
@@ -17,7 +18,7 @@ describe('mergeRefs()', () => {
   });
 
   it('returns original ref given only one ref', () => {
-    const ref = jest.fn();
+    const ref = vi.fn();
 
     const result = mergeRefs(ref);
 
@@ -25,7 +26,7 @@ describe('mergeRefs()', () => {
   });
 
   it('returns original ref given one ref and one falsy argument', () => {
-    const ref = jest.fn();
+    const ref = vi.fn();
 
     const result = mergeRefs(ref, null);
 
@@ -33,7 +34,7 @@ describe('mergeRefs()', () => {
   });
 
   it('returns merged refs properly', () => {
-    const ref1 = jest.fn();
+    const ref1 = vi.fn();
     const ref2 = createRef<HTMLDivElement>();
 
     const result = mergeRefs(ref1, ref2);
@@ -43,7 +44,7 @@ describe('mergeRefs()', () => {
   });
 
   it('handles merged functional refs properly', () => {
-    const ref1 = jest.fn();
+    const ref1 = vi.fn();
     const ref2 = createRef<HTMLDivElement>();
 
     const mergedRef = mergeRefs(ref1, ref2);
@@ -56,7 +57,7 @@ describe('mergeRefs()', () => {
 
   it('handles merged object refs properly', () => {
     const ref1 = createRef<HTMLDivElement>();
-    const ref2 = jest.fn();
+    const ref2 = vi.fn();
 
     const mergedRef = mergeRefs(ref1, ref2);
 

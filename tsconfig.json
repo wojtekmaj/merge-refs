@@ -4,7 +4,7 @@
     "esModuleInterop": true,
     "importsNotUsedAsValues": "error",
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "moduleResolution": "node",
     "noUncheckedIndexedAccess": true,
     "outDir": "dist",
