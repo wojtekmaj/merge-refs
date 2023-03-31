@@ -13,7 +13,7 @@ import type * as React from 'react';
  * @returns {Function} Merged refs
  */
 export default function mergeRefs<T>(
-  ...inputRefs: React.Ref<T>[]
+  ...inputRefs: (React.Ref<T> | undefined)[]
 ): React.Ref<T> | React.RefCallback<T> {
   const filteredInputRefs = inputRefs.filter(Boolean);
 
