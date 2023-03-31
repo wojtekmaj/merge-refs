@@ -9,8 +9,8 @@ import type * as React from 'react';
  * <div ref={mergeRefs(ref1, ref2, ref3)} />
  * ```
  *
- * @param {...Array<Function|object>} inputRefs Array of refs
- * @returns {Function} Merged refs
+ * @param {(React.Ref<T> | undefined)[]} inputRefs Array of refs
+ * @returns {React.Ref<T> | React.RefCallback<T>} Merged refs
  */
 export default function mergeRefs<T>(
   ...inputRefs: (React.Ref<T> | undefined)[]
