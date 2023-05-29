@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { createRef } from 'react';
 import { render } from '@testing-library/react';
 
-import mergeRefs from './index';
+import mergeRefs from './index.js';
 
 describe('mergeRefs()', () => {
   it('returns falsy result given no arguments', () => {
