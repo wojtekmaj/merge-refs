@@ -3189,6 +3189,11 @@ __metadata:
     rimraf: ^3.0.0
     typescript: ^5.0.0
     vitest: ^0.30.1
+  peerDependencies:
+    "@types/react": ^16.8.0 || ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
   languageName: unknown
   linkType: soft
 
