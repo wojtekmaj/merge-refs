@@ -5,7 +5,7 @@ import type * as React from 'react';
  * Supports both functions and ref objects created using createRef() and useRef().
  *
  * Usage:
- * ```jsx
+ * ```tsx
  * <div ref={mergeRefs(ref1, ref2, ref3)} />
  * ```
  *

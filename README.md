@@ -18,10 +18,10 @@ A function that merges React refs into one. Filters out invalid (eg. falsy) refs
 
 ## Example
 
-```js
+```tsx
 function Hello() {
-  const ref1 = useRef(); // I'm going to be updated!
-  const ref2 = (element) => {
+  const ref1 = useRef<HTMLDivElement>(); // I'm going to be updated!
+  const ref2 = (element: HTMLDivElement) => {
     // I'm going to be called!
   };
 
