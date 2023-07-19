@@ -12,8 +12,8 @@ A function that merges React refs into one. Filters out invalid (eg. falsy) refs
 
 ## Accepted refs
 
-- Refs created using `React.createRef()`
-- Refs created using `React.useRef()`
+- Refs created using `createRef()`
+- Refs created using `useRef()`
 - Functional refs
 
 ## Example
