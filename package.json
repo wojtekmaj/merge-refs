@@ -14,8 +14,8 @@
   },
   "scripts": {
     "build": "yarn build-esm && yarn build-cjs && yarn build-cjs-package",
-    "build-esm": "tsc --project tsconfig.build.json --outDir dist/esm --module esnext",
-    "build-cjs": "tsc --project tsconfig.build.json --outDir dist/cjs --module commonjs",
+    "build-esm": "tsc --project tsconfig.build.json --outDir dist/esm",
+    "build-cjs": "tsc --project tsconfig.build.json --outDir dist/cjs --module commonjs --verbatimModuleSyntax false",
     "build-cjs-package": "echo '{\n  \"type\": \"commonjs\"\n}' > dist/cjs/package.json",
     "clean": "rimraf dist",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
