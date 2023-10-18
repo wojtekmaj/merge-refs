@@ -1,6 +1,6 @@
 {
   "name": "merge-refs",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A function that merges React refs into one.",
   "type": "module",
   "sideEffects": false,
