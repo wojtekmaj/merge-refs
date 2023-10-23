@@ -60,6 +60,9 @@
       "optional": true
     }
   },
+  "resolutions": {
+    "eslint-plugin-import": "npm:eslint-plugin-i@^2.28.0"
+  },
   "publishConfig": {
     "access": "public",
     "provenance": true
