@@ -39,7 +39,8 @@
   "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "^1.8.0",
-    "@testing-library/react": "^15.0.0",
+    "@testing-library/dom": "^10.0.0",
+    "@testing-library/react": "^16.0.0",
     "@types/react": "*",
     "happy-dom": "^12.6.0",
     "husky": "^9.0.0",
