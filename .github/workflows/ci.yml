@@ -52,6 +52,8 @@ jobs:
 
       - name: Install dependencies
         run: yarn --immutable
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: true
 
       - name: Run type checking
         run: yarn tsc
@@ -88,6 +90,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-${{ env.cache-name }}
 
+      - name: Cache ~/.cache/ms-playwright
+        id: playwright-cache
+        uses: actions/cache@v4
+        env:
+          cache-name: playwright-cache
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
+
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
@@ -98,6 +109,10 @@ jobs:
 
       - name: Install dependencies
         run: yarn --immutable
+
+      - name: Install Playwright browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: yarn playwright install chromium-headless-shell
 
       - name: Run tests
         run: yarn unit
