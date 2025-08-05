@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
-import { createRef } from 'react';
 import { render } from '@testing-library/react';
+import { createRef } from 'react';
 
 import mergeRefs from './index.js';
 
