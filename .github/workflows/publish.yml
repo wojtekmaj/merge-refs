@@ -47,11 +47,7 @@ jobs:
       - name: Publish with latest tag
         if: github.event.release.prelease == false
         run: yarn npm publish --tag latest --provenance
-        env:
-          YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish with next tag
         if: github.event.release.prelease == true
         run: yarn npm publish --tag next --provenance
-        env:
-          YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
