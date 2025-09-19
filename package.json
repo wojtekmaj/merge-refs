@@ -67,5 +67,5 @@
     "url": "git+https://github.com/wojtekmaj/merge-refs.git"
   },
   "funding": "https://github.com/wojtekmaj/merge-refs?sponsor=1",
-  "packageManager": "yarn@4.9.1"
+  "packageManager": "yarn@4.10.2"
 }
