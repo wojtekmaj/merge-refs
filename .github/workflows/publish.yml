@@ -41,9 +41,6 @@ jobs:
       - name: Install dependencies
         run: yarn --immutable
 
-      - name: Generate archive
-        run: yarn pack
-
       - name: Publish with latest tag
         if: github.event.release.prerelease == false
         run: yarn npm publish --tag latest --provenance
