@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { render } from '@testing-library/react';
+import { render } from 'vitest-browser-react';
 import { createRef } from 'react';
 
 import mergeRefs from './index.js';
@@ -43,25 +43,25 @@ describe('mergeRefs()', () => {
     expect(result).toEqual(expect.any(Function));
   });
 
-  it('handles merged functional refs properly', () => {
+  it('handles merged functional refs properly', async () => {
     const ref1 = vi.fn();
     const ref2 = createRef<HTMLDivElement>();
 
     const mergedRef = mergeRefs(ref1, ref2);
 
-    const { container } = render(<div ref={mergedRef} />);
+    const { container } = await render(<div ref={mergedRef} />);
 
     expect(ref1).toHaveBeenCalledTimes(1);
     expect(ref1).toHaveBeenCalledWith(container.firstElementChild);
   });
 
-  it('handles merged object refs properly', () => {
+  it('handles merged object refs properly', async () => {
     const ref1 = createRef<HTMLDivElement>();
     const ref2 = vi.fn();
 
     const mergedRef = mergeRefs(ref1, ref2);
 
-    const { container } = render(<div ref={mergedRef} />);
+    const { container } = await render(<div ref={mergedRef} />);
 
     expect(ref1.current).toBe(container.firstElementChild);
   });
