@@ -36,13 +36,13 @@
   "devDependencies": {
     "@biomejs/biome": "2.4.10",
     "@types/react": "^19.2.0",
-    "@vitest/browser-playwright": "^4.1.8",
+    "@vitest/browser-playwright": "^4.1.10",
     "husky": "^9.0.0",
     "playwright": "^1.60.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "typescript": "^7.0.2",
-    "vitest": "^4.1.8",
+    "vitest": "^4.1.10",
     "vitest-browser-react": "^2.2.0"
   },
   "peerDependencies": {
