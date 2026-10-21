@@ -42,7 +42,7 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "typescript": "^7.0.2",
-    "vite": "^8.0.16",
+    "vite": "^8.3.5",
     "vitest": "^5.0.0",
     "vitest-browser-react": "^2.3.0"
   },
