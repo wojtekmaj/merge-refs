@@ -24,12 +24,36 @@ export default function mergeRefs<T>(
   }
 
   return function mergedRefs(ref) {
-    for (const inputRef of filteredInputRefs) {
+    let hasCleanup = false;
+
+    const cleanups = filteredInputRefs.map((inputRef) => {
       if (typeof inputRef === 'function') {
-        inputRef(ref);
-      } else if (inputRef) {
-        (inputRef as React.MutableRefObject<T | null>).current = ref;
+        const cleanup = inputRef(ref);
+
+        if (typeof cleanup === 'function') {
+          hasCleanup = true;
+
+          return cleanup;
+        }
+
+        return () => {
+          inputRef(null);
+        };
       }
+
+      (inputRef as React.MutableRefObject<T | null>).current = ref;
+
+      return () => {
+        (inputRef as React.MutableRefObject<T | null>).current = null;
+      };
+    });
+
+    if (hasCleanup) {
+      return function cleanupRefs() {
+        for (const cleanup of cleanups) {
+          cleanup();
+        }
+      };
     }
   };
 }

@@ -65,4 +65,23 @@ describe('mergeRefs()', () => {
 
     expect(ref1.current).toBe(container.firstElementChild);
   });
+
+  it('handles merged refs with cleanup functions properly', async () => {
+    const cleanup = vi.fn();
+    const ref1 = vi.fn().mockReturnValue(cleanup);
+    const ref2 = vi.fn();
+    const ref3 = createRef<HTMLDivElement>();
+
+    const mergedRef = mergeRefs(ref1, ref2, ref3);
+
+    const { container, unmount } = await render(<div ref={mergedRef} />);
+    const element = container.firstElementChild;
+
+    await unmount();
+
+    expect(cleanup).toHaveBeenCalledExactlyOnceWith();
+    expect(ref1).toHaveBeenCalledExactlyOnceWith(element);
+    expect(ref2).toHaveBeenLastCalledWith(null);
+    expect(ref3.current).toBe(null);
+  });
 });
