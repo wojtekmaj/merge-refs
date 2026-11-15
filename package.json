@@ -34,7 +34,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@biomejs/biome": "2.5.8",
+    "@biomejs/biome": "2.6.8",
     "@types/react": "^19.2.0",
     "@vitest/browser-playwright": "^5.0.5",
     "husky": "^9.0.0",
